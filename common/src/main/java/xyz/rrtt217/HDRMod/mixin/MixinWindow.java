@@ -63,7 +63,7 @@ import java.util.Set;
             boolean applyWindowsWorkaround = (hasOnlyIntelCard && platform == GLFW.GLFW_PLATFORM_WIN32) && !config.forceDisableGlfwWorkaround;
             if(platform != GLFW.GLFW_PLATFORM_X11 && HDRModMixinPlugin.hasGlfwLib) {
                 // 10 bpc for int
-                if(applyWindowsWorkaround && config.useUNORMWindowPixelFormat) {
+                if(applyWindowsWorkaround || config.useUNORMWindowPixelFormat) {
                     GLFW.glfwWindowHint(GLFW.GLFW_RED_BITS, 10);
                     GLFW.glfwWindowHint(GLFW.GLFW_GREEN_BITS, 10);
                     GLFW.glfwWindowHint(GLFW.GLFW_BLUE_BITS, 10);
